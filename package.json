@@ -3,19 +3,32 @@
     "name": "Gregory Langlais",
     "email": "general@gregorylanglais.com"
   },
+  "contributors": [
+    {
+      "name": "Ilya Shaisultanov",
+      "email": "ilya.shaisultanov@gmail.com"
+    }
+  ],
   "name": "ar-drone-client",
   "description": "Client for operating the AR Drone 2 Parrot.",
-  "keywords": ["ar-drone", "ar drone", "parrot", "client"],
+  "keywords": [
+    "ar-drone",
+    "ar drone",
+    "parrot",
+    "client"
+  ],
   "version": "0.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/gregl83/ar-drone-client"
   },
-  "main": "index",
+  "main": "app",
   "dependencies": {
     "express": "3.3.x",
     "jade": "*",
-    "ar-drone": "0.1.x"
+    "ar-drone": "0.1.x",
+    "debug": "~0.7.2",
+    "socket.io": "~0.9.16"
   },
   "devDependencies": {},
   "optionalDependencies": {},

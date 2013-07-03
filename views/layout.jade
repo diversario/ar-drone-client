@@ -1,7 +1,40 @@
-doctype 5
+!!!
 html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+
+    script(src='/socket.io/socket.io.js')
+    script(type="text/javascript")
+      var socket = io.connect('http://localhost:3000');
+      
+      var emit = function(cmd){
+        socket.emit('command', {command: cmd});
+      };
+      
+      socket.on('myevent', function (data) {
+        console.log(data);
+      });
+
+      document.addEventListener('keydown', function(event) {
+        switch(event.keyCode) {
+          case 38: emit('up'); // cursor up
+            break;
+          case 40: emit('down'); // cursor down
+            break;           
+          case 87: emit('forward'); // W
+            break;
+          case 65: emit('left'); // A
+            break;
+          case 83: emit('backward'); // S
+            break;
+          case 68: emit('right'); // D
+            break;
+          case 32: emit('switchPower'); // Space
+            break;                    
+          default: return;
+        }
+      });
+    
   body
     block content
